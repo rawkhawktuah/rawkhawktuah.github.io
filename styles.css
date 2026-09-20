@@ -1,1 +1,337 @@
+/* =========================
+   GitHub-style CSS
+   ========================= */
 
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface-hover: #1c2128;
+  --border: #30363d;
+
+  --text: #f0f6fc;
+  --muted: #8b949e;
+
+  --green: #238636;
+  --green-hover: #2ea043;
+  --blue: #58a6ff;
+  --red: #f85149;
+
+  --radius: 8px;
+  --transition: 0.2s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif;
+  line-height: 1.5;
+}
+
+/* =========================
+   Header
+   ========================= */
+
+.header {
+  height: 64px;
+  padding: 0 32px;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color var(--transition);
+}
+
+.nav a:hover {
+  color: var(--blue);
+}
+
+/* =========================
+   Container
+   ========================= */
+
+.container {
+  width: min(1200px, 100% - 40px);
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* =========================
+   Profile
+   ========================= */
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  border: 1px solid var(--border);
+}
+
+.profile-info h1 {
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+.profile-info p {
+  color: var(--muted);
+}
+
+/* =========================
+   Buttons
+   ========================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 7px 16px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  background: var(--surface);
+  color: var(--text);
+
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition),
+    border-color var(--transition);
+}
+
+.btn:hover {
+  background: var(--surface-hover);
+  border-color: #8b949e;
+}
+
+.btn-primary {
+  background: var(--green);
+  border-color: rgba(240, 246, 252, 0.1);
+}
+
+.btn-primary:hover {
+  background: var(--green-hover);
+}
+
+/* =========================
+   Repository grid
+   ========================= */
+
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.repo-card {
+  padding: 20px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  transition:
+    transform var(--transition),
+    border-color var(--transition),
+    background var(--transition);
+}
+
+.repo-card:hover {
+  transform: translateY(-2px);
+  background: var(--surface-hover);
+  border-color: #8b949e;
+}
+
+.repo-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 10px;
+}
+
+.repo-title a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.repo-title a:hover {
+  text-decoration: underline;
+}
+
+.repo-description {
+  min-height: 48px;
+  margin-bottom: 18px;
+
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* =========================
+   Repository stats
+   ========================= */
+
+.repo-meta {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.language {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.language-dot {
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+  background: #f1e05a;
+}
+
+/* =========================
+   Search
+   ========================= */
+
+.search {
+  width: 100%;
+  max-width: 360px;
+
+  padding: 8px 12px;
+
+  background: var(--bg);
+  color: var(--text);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  outline: none;
+}
+
+.search::placeholder {
+  color: var(--muted);
+}
+
+.search:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.15);
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+.footer {
+  padding: 32px 0;
+
+  color: var(--muted);
+  font-size: 13px;
+
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 16px;
+  }
+
+  .container {
+    width: min(100% - 24px, 1200px);
+    padding: 24px 0;
+  }
+
+  .repo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile {
+    align-items: flex-start;
+  }
+
+  .avatar {
+    width: 72px;
+    height: 72px;
+  }
+
+  .profile-info h1 {
+    font-size: 22px;
+  }
+
+  .nav {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile {
+    flex-direction: column;
+  }
+
+  .search {
+    max-width: none;
+  }
+}
